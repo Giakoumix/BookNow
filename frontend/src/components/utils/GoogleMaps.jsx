@@ -8,8 +8,8 @@ import './GoogleMaps.css'
 const GoogleMaps = ({area_details}) => {
   
   const {isLoaded} = useLoadScript({
-    googleMapsApiKey: 'AIzaSyAceAE9UBlbxzP1b5Z9SxHrINN9fMV_jnA'
-  })
+    googleMapsApiKey: process.env.REACT_APP_GMP_KEY
+  }) // 'AIzaSyAceAE9UBlbxzP1b5Z9SxHrINN9fMV_jnA' 
 
   const center = useMemo(() => ({
     lat: typeof area_details.latitude === undefined ? 0 : area_details.latitude, // Latitude of the map center
